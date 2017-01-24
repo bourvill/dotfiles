@@ -1,0 +1,10 @@
+/web/js
+/web/css
+/web/assetic
+/web/uploads
+/app/build
+/bin
+/.idea
+*/Entity/*~
+.php_cs.cache
+docker-compose.override.yml
