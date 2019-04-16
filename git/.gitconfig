@@ -1,0 +1,18 @@
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = Marinel maxime
+	email = maxime.m62@gmail.com
+[alias]
+        l = log --graph --pretty=format:'%C(yellow)%h%Creset%C(blue)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset'
+        ll = !git l --all
+        delete-merged-branch = "!git fetch && git branch --merged | egrep -v '(^\\*|master|dev)' | xargs git branch -d | git remote prune origin"
+	mister-clean = "!git fsck && git reflog expire --expire-unreachable=now --all && git gc --prune=now"
+[core]
+	editor = nano
+	excludesfile = /Users/maxime/.gitignore_global
+[push]
+	default = current
